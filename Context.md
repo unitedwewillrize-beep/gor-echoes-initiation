@@ -1,22 +1,26 @@
 # Project Name: The Initiation (Lead Magnet for Echoes)
 
 ## 1. Stack & Tech Setup
-- **Hosting / Deployment:** Vercel
-- **Database:** Supabase (PostgreSQL / JSONB)
-- **Backend Environment:** Node.js (JavaScript)
-- **AI Model / API:** Claude API (`@anthropic-ai/sdk`)
-- **Version Control:** GitHub
+- Hosting/Deployment: Vercel
+- Database: Supabase (PostgreSQL/JSONB)
+- Backend Environment: Node.js (JavaScript)
+- AI Model/API: Claude API (@anthropic-ai/sdk), Sonnet 5
+- Version Control: GitHub
 
 ## 2. Current Architecture & Core Logic
-- `user_sessions` table configured in Supabase (stores `email`, `choices`, `reflection_text`, `ai_result`).
-- Backend script (`generateResult.js`) takes user inputs, sends a structured prompt to the Claude API, parses JSON output, and commits the session to Supabase.
+- user_sessions table planned in Supabase (stores email, choices, reflection_text, ai_result) — not yet built.
+- generateResult.js (backend script) planned for later — takes user inputs, sends a structured prompt to the Claude API, parses JSON, writes to Supabase. NOT the current task.
 
 ## 3. Current Progress
-- [x] Initialized Node.js environment (`npm init -y`).
-- [x] Created Claude Console & Supabase accounts.
-- [ ] Created `user_sessions` table in Supabase.
-- [ ] Created `.env` file with `ANTHROPIC_API_KEY`, `SUPABASE_URL`, `SUPABASE_ANON_KEY`.
-- [ ] Running local script `generateResult.js` to verify end-to-end payload generation.
+- [x] VS Code, Node.js (via nvm) installed
+- [x] GitHub repo created (gor-echoes-initiation)
+- [x] Claude Console, Supabase, Vercel accounts created
+- [ ] Vite + React project scaffolded
+- [ ] Stage 1 (Arrival/Induction) frontend built — static UI, placeholder content, no backend yet
+- [ ] Stage 1 pushed to GitHub
 
 ## 4. Immediate Next Task
-- Run `node generateResult.js` locally to test sending mock choices to Claude and writing the resulting JSON to Supabase.
+Build Stage 1 (Arrival/Induction) as static frontend UI — layout, fade-in transition, placeholder narrative text. No AI, no Supabase, no backend logic yet. Commit and push once it renders correctly in the browser.
+
+## 5. Sequencing Rule (don't skip ahead)
+Frontend shell for all 5 stages comes first. Backend (Supabase + generateResult.js + AI call) only gets built once the full frontend flow exists to plug it into.
