@@ -24,3 +24,4 @@ Scaffold the Vite + React project locally, drop in the App.jsx/App.css skeleton 
 
 ## 5. Sequencing Rule (don't skip ahead)
 Frontend shell for all 5 stages comes first. Backend (Supabase + generateResult.js + AI call) only gets built once the full frontend flow exists to plug it into.
+Build the 5-phase sequence as a config-driven state machine (array of phase objects + currentIndex/next()/back()) rather than hardcoded inline order. Input capture (typed for V1) should be its own swappable module, not baked into the phase component — keeps voice input addable later without a rewrite.
